@@ -55,6 +55,7 @@ brew cleanup
 
 CASKS=(
     brave-browser
+    charles
     discord
     firefox
     google-chrome
