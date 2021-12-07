@@ -59,6 +59,7 @@ CASKS=(
     discord
     firefox
     google-chrome
+    insomnia
     iterm2
     macvim
     microsoft-teams
