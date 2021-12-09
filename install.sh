@@ -70,6 +70,7 @@ CASKS=(
     virtualbox
     visual-studio-code
     vlc
+    wireshark
 )
 
 echo_warn "Installing cask apps..."
@@ -134,10 +135,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Advanced Option: Show Path Bar
 defaults write com.apple.finder ShowPathbar -bool true
-
-# Set fast key repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
-defaults write -g InitialKeyRepeat -int 0
 
 # Require password as soon as screensaver or sleep mode starts
 defaults write com.apple.screensaver askForPassword -int 1
