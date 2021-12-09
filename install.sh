@@ -30,6 +30,7 @@ PACKAGES=(
     gitio
     hub
     imagemagick
+    jump
     libjpeg
     libmemcached 
     markdown
