@@ -68,6 +68,7 @@ CASKS=(
     slack
     spectacle
     telegram
+    tunnelbear
     virtualbox
     visual-studio-code
     vlc
