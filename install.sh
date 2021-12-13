@@ -25,6 +25,7 @@ brew install findutils
 PACKAGES=(
     autojump
     bat
+    create-dmg
     ffmpeg
     git
     gitio
