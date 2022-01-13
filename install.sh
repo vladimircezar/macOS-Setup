@@ -27,8 +27,6 @@ PACKAGES=(
     bat
     create-dmg
     ffmpeg
-    git
-    gitio
     hub
     imagemagick
     jump
@@ -38,9 +36,6 @@ PACKAGES=(
     mas
     mc
     npm
-    python
-    python3
-    pypy
     speedtest-cli
     ssh-copy-id
     tree
@@ -63,16 +58,12 @@ CASKS=(
     google-chrome
     insomnia
     iterm2
-    macvim
     microsoft-teams
     postman
     slack
-    spectacle
     telegram
-    tunnelbear
     virtualbox
     visual-studio-code
-    vlc
     wireshark
 )
 
@@ -143,16 +134,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-# Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# Enable tap-to-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
 echo_warn "Creating folder structure..."
-[[ ! -d Wiki ]] && mkdir Wiki
-[[ ! -d Workspace ]] && mkdir 
+# [[ ! -d Wiki ]] && mkdir Wiki
+# [[ ! -d Workspace ]] && mkdir 
 
 echo_warn "Installing App Store Apps"
 
@@ -177,6 +161,7 @@ mas install 1081457679 # Ebook Converter
 mas install 1081413713 # GIF Brewery 3
 mas install 899247664  # TestFlight
 mas install 1437681957 # Audiobook Builder
-mas install 1490879410 #TrashMe 3
+mas install 1490879410 # TrashMe 3
+mas install 1529448980 # Reeder 5.
 
 echo_warn "Bootstrapping complete"
