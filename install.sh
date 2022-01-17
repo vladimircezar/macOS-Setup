@@ -162,5 +162,6 @@ mas install 899247664  # TestFlight
 mas install 1437681957 # Audiobook Builder
 mas install 1490879410 # TrashMe 3
 mas install 1529448980 # Reeder 5.
+mas install 1388020431 # DevCleaner for Xcode
 
 echo_warn "Bootstrapping complete"
