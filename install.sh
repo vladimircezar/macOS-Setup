@@ -99,6 +99,8 @@ FONTS=(
 
 brew install --cask ${FONTS[@]}
 
+brew tap buo/cask-upgrade # Cask upgrade
+
 echo_warn "Installing Ruby gems"
 
 RUBY_GEMS=(
