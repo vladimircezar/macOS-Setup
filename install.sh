@@ -50,6 +50,7 @@ echo_warn "Cleaning up..."
 brew cleanup
 
 CASKS=(
+    balenaetcher
     brave-browser
     charles
     discord
