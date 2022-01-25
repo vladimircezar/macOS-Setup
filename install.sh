@@ -26,6 +26,7 @@ PACKAGES=(
     bat
     create-dmg
     ffmpeg
+    gh
     hub
     imagemagick
     jump
