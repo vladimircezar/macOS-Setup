@@ -56,6 +56,7 @@ CASKS=(
     charles
     discord
     firefox
+    github
     google-chrome
     insomnia
     iterm2
