@@ -64,6 +64,7 @@ CASKS=(
     postman
     slack
     telegram
+    tower
     virtualbox
     visual-studio-code
     wireshark
