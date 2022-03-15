@@ -55,6 +55,7 @@ CASKS=(
     brave-browser
     charles
     discord
+    dropbox
     firefox
     github
     google-chrome
