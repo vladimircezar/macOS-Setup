@@ -170,5 +170,5 @@ mas install 1437681957 # Audiobook Builder
 mas install 1490879410 # TrashMe 3
 mas install 1529448980 # Reeder 5.
 mas install 1388020431 # DevCleaner for Xcode
-
+mas install 1237562727 # IPEVO Annotator  
 echo_warn "Bootstrapping complete"
