@@ -121,6 +121,9 @@ npm install marked -g
 
 echo_warn "Configuring OSX..."
 
+# Tab between buttons on an macOS
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
 # Expand Save and Print Dialogs by Default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true && \
