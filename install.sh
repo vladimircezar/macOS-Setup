@@ -29,7 +29,6 @@ PACKAGES=(
     gh
     hub
     imagemagick
-    jump
     libjpeg
     libmemcached 
     markdown
