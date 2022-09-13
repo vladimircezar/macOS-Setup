@@ -27,14 +27,17 @@ PACKAGES=(
     create-dmg
     ffmpeg
     gh
+    googler
     hub
+    iftop
     imagemagick
     libjpeg
     libmemcached 
     markdown
     mas
     mc
-    npm
+    node
+    reminders-cli
     speedtest-cli
     ssh-copy-id
     tree
