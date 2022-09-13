@@ -55,6 +55,7 @@ brew cleanup
 CASKS=(
     balenaetcher
     brave-browser
+    docker
     dropbox
     firefox
     github
@@ -64,7 +65,7 @@ CASKS=(
     microsoft-teams
     postman
     rectangle
-    slack
+    signal
     sourcetree
     visual-studio-code
 )
