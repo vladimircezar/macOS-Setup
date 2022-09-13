@@ -52,8 +52,6 @@ brew cleanup
 CASKS=(
     balenaetcher
     brave-browser
-    charles
-    discord
     dropbox
     firefox
     github
@@ -62,12 +60,10 @@ CASKS=(
     iterm2
     microsoft-teams
     postman
+    rectangle
     slack
-    telegram
-    tower
-    virtualbox
+    sourcetree
     visual-studio-code
-    wireshark
 )
 
 echo_warn "Installing cask apps..."
@@ -142,35 +138,31 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
-echo_warn "Creating folder structure..."
-# [[ ! -d Wiki ]] && mkdir Wiki
-# [[ ! -d Workspace ]] && mkdir 
-
 echo_warn "Installing App Store Apps"
 
-mas install 1289583905 # Pixelmator Pro
-mas install 640199958  # Developer 
-mas install 409201541  # Pages
-mas install 409203825  # Numbers
-mas install 409183694  # Keynote
-mas install 747648890  # Telegram
-mas install 1479641484 # Fireworks
-mas install 682658836  # GarageBand
-mas install 1496833156 # Playgrounds
 mas install 809625456  # Asset Catalog Creator Pro
-mas install 1436953057 # Ghostery – Privacy Ad Blocker
-mas install 1147396723 # WhatsApp
-mas install 1006087419 # SnippetsLab
-mas install 408981434  # iMovie
-mas install 1355679052 # Dropover
-mas install 803453959  # Slack (4.22.1)
-mas install 1090488118 # Gemini 2
-mas install 1081457679 # Ebook Converter
-mas install 1081413713 # GIF Brewery 3
-mas install 899247664  # TestFlight
 mas install 1437681957 # Audiobook Builder
-mas install 1490879410 # TrashMe 3
-mas install 1529448980 # Reeder 5.
 mas install 1388020431 # DevCleaner for Xcode
-mas install 1237562727 # IPEVO Annotator  
+mas install 640199958  # Developer
+mas install 1355679052 # Dropover
+mas install 1081457679 # Ebook Converter
+mas install 1479641484 # Fireworks
+mas install 1081413713 # GIF Brewery 3
+mas install 682658836  # GarageBand
+mas install 1090488118 # Gemini 2
+mas install 1436953057 # Ghostery – Privacy Ad Blocker
+mas install 408981434  # iMovie
+mas install 409183694  # Keynote
+mas install 409203825  # Numbers
+mas install 409201541  # Pages
+mas install 1289583905 # Pixelmator Pro
+mas install 1496833156 # Playgrounds
+mas install 1529448980 # Reeder 5.
+mas install 803453959  # Slack
+mas install 1006087419 # SnippetsLab
+mas install 747648890  # Telegram
+mas install 899247664  # TestFlight
+mas install 1490879410 # TrashMe 3
+mas install 1147396723 # WhatsApp
+
 echo_warn "Bootstrapping complete"
