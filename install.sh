@@ -118,7 +118,7 @@ sudo gem install ${RUBY_GEMS[@]}
 echo_warn "Installing global npm packages..."
 npm install marked -g
 
-echo_warn "Configuring OSX..."
+echo_warn "Configuring macOS..."
 
 # Tab between buttons on an macOS
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
