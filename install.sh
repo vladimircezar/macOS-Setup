@@ -19,6 +19,7 @@ fi
 
 # Update homebrew recipes
 brew update
+# DONT FORGET THIS
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
