@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Vlad was here
+# Serdar was here too
 # This is a git new line
 # requires xcode and tools!
 xcode-select -p || exit "XCode must be installed! (use the app store)"
