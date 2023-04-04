@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Vlad was here
-# This is a git new line
 # requires xcode and tools!
 xcode-select -p || exit "XCode must be installed! (use the app store)"
 
@@ -27,11 +25,13 @@ PACKAGES=(
     bat
     create-dmg
     ffmpeg
+    fx
     gh
     googler
     hub
     iftop
     imagemagick
+    jq
     libjpeg
     libmemcached 
     markdown
@@ -55,17 +55,13 @@ brew cleanup
 
 CASKS=(
     balenaetcher
-    brave-browser
     docker
-    dropbox
     firefox
     github
     google-chrome
-    insomnia
     iterm2
     microsoft-teams
     postman
-    rectangle
     signal
     sourcetree
     visual-studio-code
@@ -152,12 +148,6 @@ echo_warn "Configuring macOS..."
 # Tab between buttons on an macOS
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# Expand Save and Print Dialogs by Default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true && \
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true && \
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true && \
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-
 # Advanced Option: Always Search Within Folder
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
@@ -173,24 +163,17 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 echo_warn "Installing App Store Apps"
 
-mas install 809625456  # Asset Catalog Creator Pro
 mas install 1437681957 # Audiobook Builder
-mas install 1388020431 # DevCleaner for Xcode
 mas install 640199958  # Developer
 mas install 1355679052 # Dropover
 mas install 1081457679 # Ebook Converter
-mas install 1479641484 # Fireworks
-mas install 1081413713 # GIF Brewery 3
 mas install 682658836  # GarageBand
-mas install 1090488118 # Gemini 2
-mas install 1436953057 # Ghostery – Privacy Ad Blocker
 mas install 408981434  # iMovie
 mas install 409183694  # Keynote
 mas install 409203825  # Numbers
 mas install 409201541  # Pages
 mas install 1289583905 # Pixelmator Pro
 mas install 1496833156 # Playgrounds
-mas install 1529448980 # Reeder 5.
 mas install 803453959  # Slack
 mas install 1006087419 # SnippetsLab
 mas install 747648890  # Telegram
