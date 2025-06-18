@@ -130,37 +130,6 @@ brew install --cask ${FONTS[@]}
 
 brew tap buo/cask-upgrade # Cask upgrade
 
-echo_warn "Installing Ruby gems"
-
-RUBY_GEMS=(
-    bundler
-    filewatcher
-    cocoapods
-)
-
-sudo gem install ${RUBY_GEMS[@]}
-
-echo_warn "Installing global npm packages..."
-npm install marked -g
-
-echo_warn "Configuring macOS..."
-
-# Tab between buttons on an macOS
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# Advanced Option: Always Search Within Folder
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
-
-# Advanced Option: Disable .DS_Store File Creation
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-# Advanced Option: Show Path Bar
-defaults write com.apple.finder ShowPathbar -bool true
-
-# Require password as soon as screensaver or sleep mode starts
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 echo_warn "Installing App Store Apps"
 
 mas install 1437681957 # Audiobook Builder
@@ -168,17 +137,12 @@ mas install 640199958  # Developer
 mas install 1355679052 # Dropover
 mas install 1081457679 # Ebook Converter
 mas install 682658836  # GarageBand
-mas install 408981434  # iMovie
 mas install 409183694  # Keynote
 mas install 409203825  # Numbers
 mas install 409201541  # Pages
 mas install 1289583905 # Pixelmator Pro
 mas install 1496833156 # Playgrounds
 mas install 803453959  # Slack
-mas install 1006087419 # SnippetsLab
 mas install 747648890  # Telegram
-mas install 899247664  # TestFlight
-mas install 1490879410 # TrashMe 3
-mas install 1147396723 # WhatsApp
 
 echo_warn "Bootstrapping complete"
