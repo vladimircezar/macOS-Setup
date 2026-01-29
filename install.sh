@@ -1,148 +1,142 @@
 #!/usr/bin/env bash
-# requires xcode and tools!
-xcode-select -p || exit "XCode must be installed! (use the app store)"
+set -euo pipefail
 
-# helpers
-# function echo_ok { echo -e '\033[1;32m'"$1"'\033[0m'; }
-function echo_warn { echo -e '\033[1;33m'"$1"'\033[0m'; }
-# function echo_error  { echo -e '\033[1;31mERROR: '"$1"'\033[0m'; }
+LOG_FILE="${LOG_FILE:-install.log}"
 
-echo_warn "Starting bootstrapping"
+echo_warn() { echo -e '\033[1;33m'"$1"'\033[0m'; }
+echo_info() { echo -e '\033[1;36m'"$1"'\033[0m'; }
+echo_ok()   { echo -e '\033[1;32m'"$1"'\033[0m'; }
+echo_err()  { echo -e '\033[1;31m'"$1"'\033[0m' >&2; }
 
-# Check for Homebrew, install if we don't have it
-if test ! $(which brew); then
-    echo "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+step() {
+  echo_warn ""
+  echo_warn "==> $1"
+}
 
-# Update homebrew recipes
-brew update
+die() {
+  echo_err "$1"
+  exit 1
+}
 
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
+# Count items in a Brewfile so we can show a progress bar.
+count_bundle_items() {
+  local file="$1"
+  # Count brew/cask/mas lines, ignore taps and comments.
+  grep -E '^\s*(brew|cask|mas)\s+"' "$file" 2>/dev/null | wc -l | tr -d ' '
+}
 
-PACKAGES=(
-    bat
-    create-dmg
-    ffmpeg
-    fx
-    gh
-    googler
-    hub
-    iftop
-    imagemagick
-    jq
-    libjpeg
-    libmemcached 
-    markdown
-    mas
-    mc
-    node
-    reminders-cli
-    speedtest-cli
-    ssh-copy-id
-    tree
-    vim
-    wget
-    youtube-dl
-)
+render_bar() {
+  local current="$1"
+  local total="$2"
+  local width=28
 
-echo_warn "Installing packages..."
-brew install ${PACKAGES[@]}
+  if [[ "$total" -le 0 ]]; then
+    printf '\r[............................] 0/0' >&2
+    return
+  fi
 
-echo_warn "Cleaning up..."
-brew cleanup
+  local filled=$(( current * width / total ))
+  local empty=$(( width - filled ))
 
-CASKS=(
-    balenaetcher
-    docker
-    firefox
-    github
-    google-chrome
-    iterm2
-    microsoft-teams
-    postman
-    signal
-    sourcetree
-    visual-studio-code
-)
+  local filled_str
+  local empty_str
+  filled_str="$(printf '%*s' "$filled" '' | tr ' ' '#')"
+  empty_str="$(printf '%*s' "$empty" '' | tr ' ' '.')"
 
-echo_warn "Installing cask apps..."
-brew install --cask ${CASKS[@]}
+  printf '\r[%s%s] %d/%d' "$filled_str" "$empty_str" "$current" "$total" >&2
 
-echo_warn "Installing fonts..."
-brew tap homebrew/cask-fonts
+  if [[ "$current" -ge "$total" ]]; then
+    printf '\n' >&2
+  fi
+}
 
-FONTS=(
-  font-3270-nerd-font
-  font-fira-mono-nerd-font
-  font-inconsolata-go-nerd-font
-  font-inconsolata-lgc-nerd-font
-  font-inconsolata-nerd-font
-  font-monofur-nerd-font
-  font-overpass-nerd-font
-  font-ubuntu-mono-nerd-font
-  font-agave-nerd-font
-  font-arimo-nerd-font
-  font-anonymice-nerd-font
-  font-aurulent-sans-mono-nerd-font
-  font-bigblue-terminal-nerd-font
-  font-bitstream-vera-sans-mono-nerd-font
-  font-blex-mono-nerd-font
-  font-caskaydia-cove-nerd-font
-  font-code-new-roman-nerd-font
-  font-cousine-nerd-font
-  font-daddy-time-mono-nerd-font
-  font-dejavu-sans-mono-nerd-font
-  font-droid-sans-mono-nerd-font
-  font-fantasque-sans-mono-nerd-font
-  font-fira-code-nerd-font
-  font-go-mono-nerd-font
-  font-gohufont-nerd-font
-  font-hack-nerd-font
-  font-hasklug-nerd-font
-  font-heavy-data-nerd-font
-  font-hurmit-nerd-font
-  font-im-writing-nerd-font
-  font-iosevka-nerd-font
-  font-jetbrains-mono-nerd-font
-  font-lekton-nerd-font
-  font-liberation-nerd-font
-  font-meslo-lg-nerd-font
-  font-monoid-nerd-font
-  font-mononoki-nerd-font
-  font-mplus-nerd-font
-  font-noto-nerd-font
-  font-open-dyslexic-nerd-font
-  font-profont-nerd-font
-  font-proggy-clean-tt-nerd-font
-  font-roboto-mono-nerd-font
-  font-sauce-code-pro-nerd-font
-  font-shure-tech-mono-nerd-font
-  font-space-mono-nerd-font
-  font-terminess-ttf-nerd-font
-  font-tinos-nerd-font
-  font-ubuntu-nerd-font
-  font-victor-mono-nerd-font
-)
+run_bundle_with_progress() {
+  local file="$1"
 
-brew install --cask ${FONTS[@]}
+  if [[ ! -f "$file" ]]; then
+    echo_info "Skipping missing file: $file"
+    return 0
+  fi
 
-brew tap buo/cask-upgrade # Cask upgrade
+  local total
+  total="$(count_bundle_items "$file")"
 
-echo_warn "Installing App Store Apps"
+  echo_info "Bundle file: $file"
+  echo_info "Items to process (brew/cask/mas): $total"
+  echo_info "Logging to: $LOG_FILE"
 
-mas install 1437681957 # Audiobook Builder
-mas install 640199958  # Developer
-mas install 1355679052 # Dropover
-mas install 1081457679 # Ebook Converter
-mas install 682658836  # GarageBand
-mas install 409183694  # Keynote
-mas install 409203825  # Numbers
-mas install 409201541  # Pages
-mas install 1289583905 # Pixelmator Pro
-mas install 1496833156 # Playgrounds
-mas install 803453959  # Slack
-mas install 747648890  # Telegram
+  local processed=0
+  render_bar 0 "$total"
 
-echo_warn "Bootstrapping complete"
+  # We rely on brew bundle's verbose output and count "Using/Installing/Upgrading" lines.
+  # That gives a good approximation of progress and also shows what is happening.
+  brew bundle --file "$file" --verbose 2>&1 | tee -a "$LOG_FILE" | while IFS= read -r line; do
+    if [[ "$line" =~ ^(Using|Installing|Upgrading)\  ]]; then
+      processed=$((processed + 1))
+      if [[ "$processed" -le "$total" ]]; then
+        render_bar "$processed" "$total"
+      else
+        render_bar "$total" "$total"
+      fi
+    fi
+    echo "$line"
+  done
+
+  # Finish bar in case brew bundle output format changed and we under-counted.
+  render_bar "$total" "$total"
+}
+
+main() {
+  # Always run from the folder where install.sh lives (so relative Brewfile paths work).
+  cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+  : > "$LOG_FILE"
+
+  step "Starting bootstrapping"
+
+  step "Checking Xcode Command Line Tools"
+  if ! xcode-select -p >/dev/null 2>&1; then
+    die "Xcode Command Line Tools not found. Run: xcode-select --install"
+  fi
+
+  step "Checking Homebrew"
+  if ! command -v brew >/dev/null 2>&1; then
+    echo_warn "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | tee -a "$LOG_FILE"
+
+    # Make brew available in this shell (Apple Silicon vs Intel)
+    if [[ -x /opt/homebrew/bin/brew ]]; then
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    elif [[ -x /usr/local/bin/brew ]]; then
+      eval "$(/usr/local/bin/brew shellenv)"
+    else
+      die "Homebrew installed but brew was not found in /opt/homebrew or /usr/local"
+    fi
+  fi
+
+  step "Updating Homebrew"
+  brew update | tee -a "$LOG_FILE"
+  brew upgrade | tee -a "$LOG_FILE"
+
+  step "Installing core tools + apps"
+  run_bundle_with_progress "./Brewfile"
+
+  step "Installing fonts (optional, can take a while)"
+  run_bundle_with_progress "./Brewfile.fonts"
+
+  step "Installing Mac App Store apps (requires App Store sign-in)"
+  if command -v mas >/dev/null 2>&1 && mas account >/dev/null 2>&1; then
+    run_bundle_with_progress "./Brewfile.mas"
+  else
+    echo_warn "Skipping MAS installs. Sign into the Mac App Store, then run:"
+    echo_warn "  brew bundle --file ./Brewfile.mas --verbose"
+  fi
+
+  step "Cleaning up"
+  brew cleanup | tee -a "$LOG_FILE"
+
+  echo_ok "Bootstrapping complete"
+}
+
+main "$@"
+

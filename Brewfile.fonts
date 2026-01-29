@@ -1,0 +1,55 @@
+# Brewfile.fonts
+
+tap "homebrew/cask-fonts"    # Font casks live here
+
+cask "font-3270-nerd-font"                       # Nerd Font: IBM 3270-style terminal font
+cask "font-fira-mono-nerd-font"                  # Nerd Font: Fira Mono
+cask "font-inconsolata-go-nerd-font"             # Nerd Font: Inconsolata Go
+cask "font-inconsolata-lgc-nerd-font"            # Nerd Font: Inconsolata LGC
+cask "font-inconsolata-nerd-font"                # Nerd Font: Inconsolata
+cask "font-monofur-nerd-font"                    # Nerd Font: Monofur
+cask "font-overpass-nerd-font"                   # Nerd Font: Overpass
+cask "font-ubuntu-mono-nerd-font"                # Nerd Font: Ubuntu Mono
+cask "font-agave-nerd-font"                      # Nerd Font: Agave
+cask "font-arimo-nerd-font"                      # Nerd Font: Arimo
+cask "font-anonymice-nerd-font"                  # Nerd Font: Anonymice
+cask "font-aurulent-sans-mono-nerd-font"         # Nerd Font: Aurulent Sans Mono
+cask "font-bigblue-terminal-nerd-font"           # Nerd Font: BigBlue Terminal
+cask "font-bitstream-vera-sans-mono-nerd-font"   # Nerd Font: Bitstream Vera Sans Mono
+cask "font-blex-mono-nerd-font"                  # Nerd Font: IBM Plex Mono (Blex)
+cask "font-caskaydia-cove-nerd-font"             # Nerd Font: Cascadia Code variant
+cask "font-code-new-roman-nerd-font"             # Nerd Font: Code New Roman
+cask "font-cousine-nerd-font"                    # Nerd Font: Cousine
+cask "font-daddy-time-mono-nerd-font"            # Nerd Font: DaddyTimeMono
+cask "font-dejavu-sans-mono-nerd-font"           # Nerd Font: DejaVu Sans Mono
+cask "font-droid-sans-mono-nerd-font"            # Nerd Font: Droid Sans Mono
+cask "font-fantasque-sans-mono-nerd-font"        # Nerd Font: Fantasque Sans Mono
+cask "font-fira-code-nerd-font"                  # Nerd Font: Fira Code
+cask "font-go-mono-nerd-font"                    # Nerd Font: Go Mono
+cask "font-gohufont-nerd-font"                   # Nerd Font: GohuFont (tiny bitmap-ish look)
+cask "font-hack-nerd-font"                       # Nerd Font: Hack
+cask "font-hasklug-nerd-font"                    # Nerd Font: Hasklug
+cask "font-heavy-data-nerd-font"                 # Nerd Font: Heavy Data
+cask "font-hurmit-nerd-font"                     # Nerd Font: Hermit (Hurmit)
+cask "font-im-writing-nerd-font"                 # Nerd Font: iMWriting
+cask "font-iosevka-nerd-font"                    # Nerd Font: Iosevka
+cask "font-jetbrains-mono-nerd-font"             # Nerd Font: JetBrains Mono
+cask "font-lekton-nerd-font"                     # Nerd Font: Lekton
+cask "font-liberation-nerd-font"                 # Nerd Font: Liberation
+cask "font-meslo-lg-nerd-font"                   # Nerd Font: Meslo LG (popular for terminals)
+cask "font-monoid-nerd-font"                     # Nerd Font: Monoid
+cask "font-mononoki-nerd-font"                   # Nerd Font: Mononoki
+cask "font-mplus-nerd-font"                      # Nerd Font: M+ (MPlus)
+cask "font-noto-nerd-font"                       # Nerd Font: Noto
+cask "font-open-dyslexic-nerd-font"              # Nerd Font: OpenDyslexic
+cask "font-profont-nerd-font"                    # Nerd Font: ProFont
+cask "font-proggy-clean-tt-nerd-font"            # Nerd Font: ProggyCleanTT (pixel-ish)
+cask "font-roboto-mono-nerd-font"                # Nerd Font: Roboto Mono
+cask "font-sauce-code-pro-nerd-font"             # Nerd Font: Source Code Pro variant
+cask "font-shure-tech-mono-nerd-font"            # Nerd Font: ShureTechMono
+cask "font-space-mono-nerd-font"                 # Nerd Font: Space Mono
+cask "font-terminess-ttf-nerd-font"              # Nerd Font: Terminess (Terminus-based)
+cask "font-tinos-nerd-font"                      # Nerd Font: Tinos
+cask "font-ubuntu-nerd-font"                     # Nerd Font: Ubuntu
+cask "font-victor-mono-nerd-font"                # Nerd Font: Victor Mono (great italics)
+

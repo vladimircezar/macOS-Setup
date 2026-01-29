@@ -1,0 +1,40 @@
+# Brewfile.mas
+
+# Mac App Store apps (used by: `brew bundle --file Brewfile.mas`)
+# Note: You must be signed into the App Store on this Mac for `mas` installs to work.
+
+# Apple first-party
+mas "Keynote", id: 409183694              # Slides / presentations
+mas "Numbers", id: 409203825              # Spreadsheets
+mas "Pages", id: 409201541                # Documents
+
+# Developer tools
+mas "Apple Developer", id: 640199958      # WWDC sessions, dev news
+mas "Swift Playground", id: 1496833156    # Learn Swift / quick prototyping
+mas "CotEditor", id: 1024640650           # Lightweight plain text editor
+
+# Communication
+mas "Slack for Desktop", id: 803453959    # Slack desktop client
+mas "Telegram", id: 747648890             # Telegram desktop client
+mas "WhatsApp Messenger", id: 310633997   # WhatsApp client (runs on Mac too)
+
+# Networking and remote access
+mas "Tailscale", id: 1470499037           # WireGuard-based mesh VPN
+mas "Windows App", id: 1295203466         # Microsoft Remote Desktop replacement
+
+# Smart home
+mas "Home Assistant", id: 1099568401      # Home Assistant Companion
+
+# Utilities
+mas "Data Jar", id: 1453273600            # Key-value store for Shortcuts (also runs on Apple Silicon Macs)
+mas "rcmd App Switcher", id: 1596283165   # Right-Command driven app switcher
+mas "Name Mangler 3", id: 603637384       # Batch file renamer
+
+# Photo and video
+mas "Pixelmator Pro", id: 1289583905      # Image editor
+mas "Photomator", id: 1444636541          # Photo editor with great RAW support
+mas "CapCut", id: 1500855883              # Video editor
+
+# Audio
+mas "Audiobook Builder 2", id: 1437681957 # Build audiobooks from audio files
+
