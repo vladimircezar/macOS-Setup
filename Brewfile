@@ -23,6 +23,7 @@ brew "markdown"                # CLI Markdown processor/converter
 brew "mas"                     # Mac App Store CLI (install apps by ID)
 brew "mc"                      # Midnight Commander terminal file manager
 brew "node"                    # Node.js runtime (JS tooling, scripts)
+brew "pure"                    # Pretty, minimal and fast ZSH prompt
 brew "speedtest-cli"           # Internet speed test from the terminal
 brew "tree"                    # Directory tree printer
 brew "vim"                     # Vim editor
