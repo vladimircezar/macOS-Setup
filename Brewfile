@@ -20,6 +20,7 @@ brew "lazydocker"              # Terminal UI for Docker + docker compose (contai
 brew "lazygit"                 # Terminal UI for git (fast staging, logs, branches, conflicts)
 brew "libjpeg"                 # JPEG codec library (dependency for image tools)
 brew "libmemcached"            # libmemcached client library (Memcached support)
+brew "lsd"                     # Prettier ls replacement (your ~/.zshrc aliases ls to lsd when installed)
 brew "markdown"                # CLI Markdown processor/converter
 brew "mas"                     # Mac App Store CLI (install apps by ID)
 brew "mc"                      # Midnight Commander terminal file manager
