@@ -9,6 +9,7 @@ tap "homebrew/cask-fonts"    # Fonts as casks (Nerd Fonts, etc.)
 brew "findutils"               # GNU find, xargs, locate, updatedb (g-prefixed tools)
 brew "bat"                     # Better cat with syntax highlighting
 brew "btop"                    # Modern resource monitor (CPU/RAM/disk/network) in the terminal
+brew "fastfetch"               # ASCII logo + system info on shell startup (via ~/.zshrc fastfetch block)
 brew "ffmpeg"                  # Audio/video conversion and processing Swiss army knife
 brew "fx"                      # Interactive JSON viewer for the terminal
 brew "gh"                      # Official GitHub CLI
