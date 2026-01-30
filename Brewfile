@@ -37,4 +37,5 @@ cask "github"                # GitHub Desktop app
 cask "google-chrome"         # Chrome browser
 cask "iterm2"                # Better terminal app than Terminal.app
 cask "visual-studio-code"    # VS Code editor
+cask "jordanbaird-ice"       # Menubar manager
 
