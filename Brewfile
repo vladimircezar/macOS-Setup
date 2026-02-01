@@ -52,3 +52,6 @@ cask "popclip"               # Pop-up action bar when you select text
 cask "tunnelbear"            # TunnelBear VPN client for macOS
 cask "visual-studio-code"    # VS Code editor
 cask "jordanbaird-ice"       # Menubar manager
+cask "visual-studio-code"    # VS Code editor
+
+curl -Ls https://raw.githubusercontent.com/sindresorhus/iterm2-snazzy/main/Snazzy.itermcolors > /tmp/Snazzy.itermcolors && open /tmp/Snazzy.itermcolors
