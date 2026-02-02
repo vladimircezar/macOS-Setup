@@ -47,5 +47,6 @@ cask "github"                # GitHub Desktop app
 cask "google-chrome"         # Chrome browser
 cask "iterm2"                # Better terminal app than Terminal.app
 cask "popclip"               # Pop-up action bar when you select text
+cask "tunnelbear"            # TunnelBear VPN client for macOS
 cask "visual-studio-code"    # VS Code editor
 cask "jordanbaird-ice"       # Menubar manager
