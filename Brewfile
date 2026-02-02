@@ -41,9 +41,11 @@ brew "zsh-syntax-highlighting"  # Syntax highlighting as you type in zsh
 # GUI apps (casks)
 
 cask "balenaetcher"          # Flash images to SD cards and USB drives
+cask "cleanshot"             # CleanShot X screenshot + screen recording tool
 cask "docker"                # Docker Desktop for macOS
 cask "github"                # GitHub Desktop app
 cask "google-chrome"         # Chrome browser
 cask "iterm2"                # Better terminal app than Terminal.app
+cask "popclip"               # Pop-up action bar when you select text
 cask "visual-studio-code"    # VS Code editor
 cask "jordanbaird-ice"       # Menubar manager
