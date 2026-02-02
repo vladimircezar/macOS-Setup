@@ -6,11 +6,11 @@ tap "homebrew/cask-fonts"    # Fonts as casks (Nerd Fonts, etc.)
 
 # CLI tools (formulae)
 
-brew "findutils"                # GNU find, xargs, locate, updatedb (g-prefixed tools)
 brew "bat"                      # Better cat with syntax highlighting
 brew "btop"                     # Modern resource monitor (CPU/RAM/disk/network) in the terminal
 brew "fastfetch"                # ASCII logo + system info on shell startup (via ~/.zshrc fastfetch block)
 brew "ffmpeg"                   # Audio/video conversion and processing Swiss army knife
+brew "findutils"                # GNU find, xargs, locate, updatedb (g-prefixed tools)
 brew "fx"                       # Interactive JSON viewer for the terminal
 brew "gh"                       # Official GitHub CLI
 brew "iftop"                    # Real-time network bandwidth monitor per connection
@@ -26,6 +26,7 @@ brew "markdown"                 # CLI Markdown processor/converter
 brew "mas"                      # Mac App Store CLI (install apps by ID)
 brew "mc"                       # Midnight Commander terminal file manager
 brew "ncdu"                     # TUI disk-usage viewer (fast way to find big folders) :contentReference[oaicite:0]{index=0}
+brew "neovim" # Modern Vim fork with LSP-friendly ecosystem (aka nvim)
 brew "node"                     # Node.js runtime (JS tooling, scripts)
 brew "pure"                     # Pretty, minimal and fast ZSH prompt
 brew "ranger"                   # Keyboard-driven file browser in the terminal :contentReference[oaicite:1]{index=1}
