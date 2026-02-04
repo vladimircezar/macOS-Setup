@@ -26,11 +26,12 @@ brew "markdown"                 # CLI Markdown processor/converter
 brew "mas"                      # Mac App Store CLI (install apps by ID)
 brew "mc"                       # Midnight Commander terminal file manager
 brew "ncdu"                     # TUI disk-usage viewer (fast way to find big folders) :contentReference[oaicite:0]{index=0}
-brew "neovim" # Modern Vim fork with LSP-friendly ecosystem (aka nvim)
+brew "neovim"                   :# Modern Vim fork with LSP-friendly ecosystem (aka nvim)
 brew "node"                     # Node.js runtime (JS tooling, scripts)
 brew "pure"                     # Pretty, minimal and fast ZSH prompt
 brew "ranger"                   # Keyboard-driven file browser in the terminal :contentReference[oaicite:1]{index=1}
 brew "speedtest-cli"            # Internet speed test from the terminal
+brew "stow"                     # Symlink manager for dotfiles (keeps configs organized via a “symlink farm”)
 brew "tree"                     # Directory tree printer
 brew "vim"                      # Vim editor
 brew "watch"                    # Re-run a command every N seconds and show live output :contentReference[oaicite:2]{index=2}
