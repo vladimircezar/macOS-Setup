@@ -26,7 +26,7 @@ brew "markdown"                 # CLI Markdown processor/converter
 brew "mas"                      # Mac App Store CLI (install apps by ID)
 brew "mc"                       # Midnight Commander terminal file manager
 brew "ncdu"                     # TUI disk-usage viewer (fast way to find big folders) :contentReference[oaicite:0]{index=0}
-brew "neovim"                   :# Modern Vim fork with LSP-friendly ecosystem (aka nvim)
+brew "neovim"                   # Modern Vim fork with LSP-friendly ecosystem (aka nvim)
 brew "node"                     # Node.js runtime (JS tooling, scripts)
 brew "pure"                     # Pretty, minimal and fast ZSH prompt
 brew "ranger"                   # Keyboard-driven file browser in the terminal :contentReference[oaicite:1]{index=1}
