@@ -16,6 +16,7 @@ brew "gh"                       # Official GitHub CLI
 brew "iftop"                    # Real-time network bandwidth monitor per connection
 brew "imagemagick"              # Image conversion and manipulation toolkit
 brew "jq"                       # JSON processor (slice, filter, transform)
+brew "jless"                    # Pager for exploring JSON (interactive, like less + jq)
 brew "lazydocker"               # Terminal UI for Docker + docker compose (containers, logs, stats)
 brew "lazygit"                  # Terminal UI for git (fast staging, logs, branches, conflicts)
 brew "libjpeg"                  # JPEG codec library (dependency for image tools)
