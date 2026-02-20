@@ -13,6 +13,7 @@ brew "ffmpeg"                   # Audio/video conversion and processing Swiss ar
 brew "findutils"                # GNU find, xargs, locate, updatedb (g-prefixed tools)
 brew "fx"                       # Interactive JSON viewer for the terminal
 brew "gh"                       # Official GitHub CLI
+brew "ledger"                   # Accounting CLI for plain-text finance tracking
 brew "iftop"                    # Real-time network bandwidth monitor per connection
 brew "imagemagick"              # Image conversion and manipulation toolkit
 brew "jq"                       # JSON processor (slice, filter, transform)
