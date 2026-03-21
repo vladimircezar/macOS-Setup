@@ -39,6 +39,7 @@ brew "neovim"                          # Modern Vim fork with LSP-friendly ecosy
 brew "node"                            # Node.js runtime (JS tooling, scripts)
 brew "pure"                            # Pretty, minimal and fast ZSH prompt
 brew "ranger"                          # Keyboard-driven file browser in the terminal
+brew "rtk"                             # Filters and compresses command outputs before they reach the LLM context
 brew "speedtest-cli"                   # Internet speed test from the terminal
 brew "stow"                            # Symlink manager for dotfiles (keeps configs organized via a “symlink farm”)
 brew "tree"                            # Directory tree printer
